@@ -67,9 +67,10 @@ if query:
         persist_directory=persist_directory,
         embedding_function=embeddings
     )
-    results = vectorstore.similarity_search(query, k=3)
+    results = vectorstore.similarity_search(query, k=1)
     st.header("Top Matching Results 📄")
     for i, doc in enumerate(results):
-        st.write(f"### Result {i+1}")
+        st.write(f"### Result")
         st.write(doc.page_content)
+
         st.divider()
